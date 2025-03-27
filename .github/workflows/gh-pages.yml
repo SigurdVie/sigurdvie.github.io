@@ -13,7 +13,7 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
         with:
-          submodules: true
+          #submodules: true
           fetch-depth: 0
 
       - name: Setup Node
@@ -22,7 +22,7 @@ jobs:
           node-version: '16'
 
       - name: Cache dependencies
-        uses: actions/cache@v3  # Updated to v3
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -39,7 +39,7 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --minify --gc --enableGitInfo -b https://sigurdvie.github.io
+        run: hugo --minify --gc --enableGitInfo -b https://sigurdvie.github.io/
 
       - name: Deploy 🚀
         uses: peaceiris/actions-gh-pages@v3
