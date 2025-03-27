@@ -39,7 +39,7 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --minify --gc --enableGitInfo -b https://sigurdvie.github.io/
+        run: hugo --minify --gc --enableGitInfo # -b https://sigurdvie.github.io/
 
       - name: Deploy 🚀
         uses: peaceiris/actions-gh-pages@v3
